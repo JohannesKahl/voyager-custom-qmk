@@ -240,5 +240,5 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
       return 0;  // Bypass Achordion.
   }
 
-  return 1000;
+  return 800;
 }
