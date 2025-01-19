@@ -234,3 +234,11 @@ uint16_t achordion_streak_chord_timeout(
     return 240;  // A longer timeout otherwise.
   }
 }
+
+uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+  if (IS_QK_LAYER_TAP(tap_hold_keycode)) {
+      return 0;  // Bypass Achordion.
+  }
+
+  return 1000;
+}
