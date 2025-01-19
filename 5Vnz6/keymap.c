@@ -219,3 +219,18 @@ tap_dance_action_t tap_dance_actions[] = {
 void matrix_scan_user(void) {
   achordion_task();
 }
+
+uint16_t achordion_streak_chord_timeout(
+    uint16_t tap_hold_keycode, uint16_t next_keycode) {
+  if (IS_QK_LAYER_TAP(tap_hold_keycode)) {
+    return 0;  // Disable streak detection on layer-tap keys.
+  }
+
+  // Otherwise, tap_hold_keycode is a mod-tap key.
+  uint8_t mod = mod_config(QK_MOD_TAP_GET_MODS(tap_hold_keycode));
+  if ((mod & MOD_LSFT) != 0) {
+    return 100;  // A shorter streak timeout for Shift mod-tap keys.
+  } else {
+    return 240;  // A longer timeout otherwise.
+  }
+}
