@@ -141,7 +141,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_2:
     if (record->event.pressed) {
-      SEND_STRING(SS_LCTL(SS_TAP(X_LEFT_ALT)) SS_DELAY(100) SS_TAP(X_F));
+      SEND_STRING(SS_LCTL(SS_TAP(X_LEFT_SHIFT)) SS_DELAY(100) SS_TAP(X_F));
     }
     break;
     case ST_MACRO_3:
@@ -166,7 +166,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_7:
     if (record->event.pressed) {
-      SEND_STRING(SS_LCTL(SS_TAP(X_LEFT_ALT)) SS_DELAY(100) SS_TAP(X_N));
+      SEND_STRING(SS_LCTL(SS_TAP(X_LEFT_SHIFT)) SS_DELAY(100) SS_TAP(X_N));
     }
     break;
 
